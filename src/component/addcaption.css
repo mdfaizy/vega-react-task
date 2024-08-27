@@ -1,0 +1,85 @@
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.add-caption-heading {
+  text-align: center;
+  font-size: 35px;
+  align-items: center;
+}
+
+.add-caption-contante {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid gray;
+  width: 800px;
+  margin: 0 auto;
+  border-radius: 10px;
+  height: 300px;
+}
+
+.add-caption-left {
+  width: 385px;
+  height: 295px;
+}
+
+.add-caption-left img {
+  width: 490px;
+  height: 280px;
+}
+
+.add-caption-right {
+  width: 400px;
+  height: 300px;
+}
+
+.canvas-image {
+  width: 400px;
+  height: 300px;
+}
+.add-caption-right img {
+  width: 400px;
+  height: 300px;
+}
+.add-caption-right-top-text {
+  display: flex;
+  border-bottom: 1px solid gray;
+}
+
+.add-caption-right-top-text {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: center;
+  gap: 70px;
+}
+
+.add-caption-left-top-text {
+  margin: 0 10px;
+  padding: 5px 10px;
+  background: none;
+  border: none;
+  border-right: 1px solid #9a9898;
+  padding-left: 15px;
+}
+
+.add-caption-right-top-text input {
+  border: none;
+  outline: none;
+}
+.add-caption-left-top-text:first-child {
+  border-right: 2px solid #000;
+  padding-right: 15px;
+}
+.add-caption-download-button {
+  margin-bottom: 10px;
+  display: flex;
+  margin-left: 140px;
+  background: none;
+  border: none;
+  text-transform: uppercase;
+  font-size: 20px;
+}

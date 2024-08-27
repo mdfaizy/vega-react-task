@@ -1,0 +1,78 @@
+* {
+  /* background-color: gray */
+}
+.search-conatiner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.search-header-text {
+  font-size: 25px;
+  margin-top: 30px;
+  font-weight: 600;
+  text-align: center;
+  color: gray;
+}
+.personal-details {
+  padding: 0px;
+  gap: 0;
+}
+.personal-details h2 {
+  font-size: 20px;
+  color: gray;
+  padding-top: 30px;
+}
+.personal-details h3 {
+  color: gray;
+  font-size: 1rem;
+  font: bold;
+  padding-bottom: 10px;
+}
+
+.search-button {
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  justify-content: center;
+  border: 1px rgb(54, 54, 53) solid;
+  border-radius: 4px;
+  height: 30px;
+  width: 270px;
+  gap: 50px;
+  padding: 7px;
+  margin: 0 auto;
+  flex-grow: 1;
+}
+.search-button input {
+  outline: none;
+  border: none;
+}
+
+.search-button button {
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+.image-text-contante img {
+  padding: 10px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+.add-caption-button {
+  text-align: center;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  background: none;
+flex-wrap: wrap;
+  margin-left: 30px;
+  padding-top: 10px;
+}
+.container{
+    margin-top: 20px;
+
+}
