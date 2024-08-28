@@ -95,7 +95,6 @@ const AddCaption = () => {
   return (
     <div className="container">
       <h2 className="add-caption-heading">ADD CAPTION</h2>
-      {/* <h2>Caption for {photo.photographer}</h2> */}
       <div className="add-caption-contante">
         <div className="add-caption-left">
           <img
