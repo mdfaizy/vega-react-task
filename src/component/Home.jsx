@@ -1,4 +1,3 @@
-import Spainer from './Spinners'
 import "./searchPage.css";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -9,27 +8,47 @@ import { FaSearch } from "react-icons/fa";
 const Home = () => {
   const [query, setQuery] = useState("");
   const [photos, setPhotos] = useState([]);
+  const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(false); 
   const navigate = useNavigate();
-  const [loading, setLoading] = useState(false); // Loading state
+
   const handleInputChange = (e) => {
     setQuery(e.target.value);
+    setError(null); 
   };
 
   const handleSubmit = (e) => {
-    setLoading(true);
     e.preventDefault();
+
+    // Validate the search query
+    if (!query.trim()) {
+      setError("Search term cannot be empty. Please enter a keyword.");
+      return;
+    }
+
+    setLoading(true);
+    setPhotos([]);
+    setError(null);
+
     const client = createClient(
       "4a7AMKxzdkUMbk01TADWuI4RlcdZtOqNacIfyh1KPKXBfi8FvBNHeiqc"
     );
+
     client.photos
       .search({ query, per_page: 8 })
       .then((response) => {
-        if (response && response.photos) {
+        setLoading(false);
+        if (response && response.photos.length > 0) {
           setPhotos(response.photos);
+        } else {
+          setError("No photos found. Please try a different search term.");
         }
       })
-      .catch((err) => console.error("Error fetching photos:", err));
-      setLoading(false);
+      .catch((err) => {
+        setLoading(false);
+        setError("An error occurred while fetching photos. Please try again later.");
+        console.error("Error fetching photos:", err);
+      });
   };
 
   // Function to navigate to the Caption component for a specific photo
@@ -39,7 +58,7 @@ const Home = () => {
   };
 
   return (
-    <div className="search-conatiner">
+    <div className="search-container">
       <h2 className="search-header-text">SEARCH PAGE</h2>
       <div className="personal-details">
         <h2>
@@ -60,20 +79,19 @@ const Home = () => {
           <div className="submit-container flex items-center">
             <button type="submit" className="submit-button flex items-center">
               <FaSearch className="search-icon" />
-             
             </button>
           </div>
         </div>
-       
       </form>
 
-<div className="container">
+      <div className="container">
         <div className="row">
           {loading ? (
-            <div className="loading-container">
-             
-              <Spainer/>
+            <div>
+             <p className="text-center">Loading...</p>
             </div>
+          ) : error ? (
+            <p className="text-center pt-4 text-bold">{error}</p>
           ) : photos.length > 0 ? (
             <>
               {photos.map((item, index) => (
@@ -97,7 +115,7 @@ const Home = () => {
               ))}
             </>
           ) : (
-            <p className="text-center pt-4 text-bold">No photos found Please search image.</p>
+            <p className="text-center pt-4 text-bold">No photos found. Please search for an image.</p>
           )}
         </div>
       </div>

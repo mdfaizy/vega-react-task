@@ -13,6 +13,8 @@
 .personal-details {
   padding: 0px;
   gap: 0;
+ 
+  margin-left: 130px;
 }
 .personal-details h2 {
   font-size: 20px;
