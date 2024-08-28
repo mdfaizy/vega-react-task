@@ -2,7 +2,7 @@
 
 
 
-import './Spainer.css'
+import './Spinners.css'
 
 const Spainer = () => {
   
