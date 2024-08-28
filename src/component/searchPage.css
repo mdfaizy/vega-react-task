@@ -21,6 +21,15 @@
   color: gray;
   padding-top: 30px;
 }
+
+.error-message {
+    color: red; 
+    font-size:16px; 
+    font: bold;
+    margin-top: 10px;
+    text-align: center; 
+  }
+  
 .personal-details h3 {
   color: gray;
   font-size: 1rem;
